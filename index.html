@@ -33,29 +33,33 @@
             </table>
           </div>
           <h3>Add New Listing</h3> 
-            <form>
-              Code:<br>
-              <input type="text" ng-model="listing.code" value="">
+            <form novalidate>
+              <h4>Code:</h4>
+              <input type="text" ng-model="listing.code" placeholder="Required..." required>
               <br>
-              Building Name:<br>
-              <input type="text" ng-model="listing.name" value="">
+              <h4>Building Name:</h4>
+              <input type="text" ng-model="listing.name" placeholder="Required..." required>
               <br>
-              Coordinates:<br>
-              <input type="text" ng-model="listing.coordinates" value="">
+              <h4>Coordinates:</h4>
+              <input type="text" ng-model="listing.coordinates.latitude" placeholder="Enter Latitude...">
               <br>
-              Address:<br>
-              <input type="text" ng-model="listing.address" value="">
+              <input type="text" ng-model="listing.coordinates.longitude" placeholder="Enter Longitude...">
+              <br>     
+              <h4>Address:</h4>
+              <input type="text" ng-model="listing.address" placeholder="Enter Address...">
               <br><br>
-              <input type="submit" ng-click="addListing()" value="Add">
+              <button class="btn btn-success" ng-click="addListing()">Add</button>&nbsp;&nbsp;
             </form>
         </div>
         <div class="col-md-6">
           <div class="jumbotron">
             <h2>Detailed Information</h2>
-              <h4>Code:</h4> {{detailedInfo.code}}
-              <h4>Name:</h4> {{detailedInfo.name}}
-              <h4>Coordinates:</h4> {{detailedInfo.coordinates}}
-              <h4>Address:</h4> {{detailedInfo.address}}
+              <h4>Code:</h4> &nbsp;&nbsp;{{detailedInfo.code}}
+              <h4>Name:</h4> &nbsp;&nbsp;{{detailedInfo.name}}
+              <h4>Coordinates:</h4> 
+              &nbsp;&nbsp;Latitude: {{detailedInfo.coordinates.latitude}}<br>
+              &nbsp;&nbsp;Longitude: {{detailedInfo.coordinates.longitude}}
+              <h4>Address:</h4> &nbsp;&nbsp;{{detailedInfo.address}}
               <br><br>
               <tr><button class="btn btn-primary" ng-click="clearDetails()">Clear</button></tr>
             <!-- 

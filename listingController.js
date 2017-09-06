@@ -9,10 +9,11 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
      */
 
     $scope.addListing = function() {
-        console.log($scope.listing);
-        $scope.listing.code = $scope.listing.code.toUpperCase();
-        $scope.listings.push($scope.listing);
-        $scope.listing = "";
+        if ($scope.listing.code && $scope.listing.name){
+          $scope.listing.code = $scope.listing.code.toUpperCase();
+          $scope.listings.push($scope.listing);
+          $scope.listing = "";
+        }
     };
 
     $scope.deleteListing = function(index) {
