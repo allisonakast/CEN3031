@@ -22,9 +22,8 @@ var findLibraryWest = function() {
 
 var removeCable = function() {
   Listing.findOne({ code : 'CABL'}, function (err, listing) {
-    if (err) {
-        return;
-    }
+    if (err) throw err;
+    
     listing.remove(function (err) {
         console.log(listing);
     });
